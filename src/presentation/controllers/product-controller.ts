@@ -28,16 +28,22 @@ export const createProduct = async (
     }
 
     let manualUrl = undefined;
+    let videoUrl = undefined;
     const imageUrls: string[] = [];
 
     // Extract files uploaded via Multer
     const files = req.files as { [fieldname: string]: Express.Multer.File[] } | undefined;
-    
+
     if (files) {
       if (files['manual'] && files['manual'][0]) {
         const manualFile = files['manual'][0];
         const uploadRes = await uploadToCloudinary(manualFile.buffer, 'manuals', manualFile.originalname);
         manualUrl = uploadRes.url;
+      }
+      if (files['video'] && files['video'][0]) {
+        const videoFile = files['video'][0];
+        const uploadRes = await uploadToCloudinary(videoFile.buffer, 'product-videos', videoFile.originalname);
+        videoUrl = uploadRes.url;
       }
       if (files['images']) {
         for (const imgFile of files['images']) {
@@ -64,6 +70,7 @@ export const createProduct = async (
       companyId: companyId || req.body.companyId, // Admin can explicitly set companyId
       description,
       manualUrl,
+      videoUrl,
       imageUrls,
       specifications: parsedSpecs,
     });
@@ -201,6 +208,11 @@ export const updateProduct = async (
         const manualFile = files['manual'][0];
         const uploadRes = await uploadToCloudinary(manualFile.buffer, 'manuals', manualFile.originalname);
         product.manualUrl = uploadRes.url;
+      }
+      if (files['video'] && files['video'][0]) {
+        const videoFile = files['video'][0];
+        const uploadRes = await uploadToCloudinary(videoFile.buffer, 'product-videos', videoFile.originalname);
+        product.videoUrl = uploadRes.url;
       }
       if (files['images']) {
         const imageUrls: string[] = [];

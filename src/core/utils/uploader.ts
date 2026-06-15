@@ -17,12 +17,16 @@ const fileFilter = (req: any, file: Express.Multer.File, cb: multer.FileFilterCa
     'text/plain',
     'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'video/mp4',
+    'video/webm',
+    'video/quicktime',
+    'video/mpeg',
   ];
 
   if (allowedMimeTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new BadRequestError(`Unsupported file format: ${file.mimetype}. Only JPEG, PNG, WEBP, PDF, TXT, and Word documents are allowed.`));
+    cb(new BadRequestError(`Unsupported file format: ${file.mimetype}.`));
   }
 };
 
@@ -46,7 +50,7 @@ export const uploadToCloudinary = async (
   folder: string,
   originalName: string
 ): Promise<UploadResult> => {
-  if (env.CLOUDINARY_CLOUD_NAME === 'mock' || !env.CLOUDINARY_CLOUD_NAME) {
+  if (!env.CLOUDINARY_API_KEY || !/^\d+$/.test(env.CLOUDINARY_API_KEY)) {
     logger.info(`[MOCK UPLOAD] Simulating file upload for ${originalName} into folder: ${folder}`);
     const randomId = Math.random().toString(36).substring(7);
     return {
@@ -57,11 +61,13 @@ export const uploadToCloudinary = async (
     };
   }
 
+  const isDocument = /\.(pdf|doc|docx|txt)$/i.test(originalName);
+
   return new Promise((resolve, reject) => {
     const uploadStream = cloudinary.uploader.upload_stream(
       {
         folder,
-        resource_type: 'auto',
+        resource_type: isDocument ? 'raw' : 'auto',
       },
       (error, result) => {
         if (error) {

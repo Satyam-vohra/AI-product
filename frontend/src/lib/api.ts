@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 
 export type ApiEnvelope<T> = {
   status: "success" | "error";
@@ -33,6 +33,7 @@ export type ProductRecord = {
   category: string;
   description: string;
   manualUrl?: string;
+  videoUrl?: string;
   imageUrls: string[];
   updatedAt?: string;
 };
@@ -139,20 +140,32 @@ export const api = {
       body: formData,
     }),
 
+  updateProduct: (id: string, formData: FormData) =>
+    request<{ product: ProductRecord }>(`/products/${id}`, {
+      method: "PUT",
+      body: formData,
+    }),
+
+  createProduct: (payload: { sku: string; name: string; category: string; description: string }) =>
+    request<{ product: ProductRecord }>("/products", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+
   userDashboard: () => request<{ metrics: Record<string, number>; recentDiagnosticSessions: DiagnosticSession[] }>("/dashboards/user"),
 
   userSessions: () => request<{ sessions: DiagnosticSession[] }>("/sessions/user"),
 
-  createSession: (productId: string) =>
+  createSession: (productId?: string) =>
     request<{ session: DiagnosticSession }>("/sessions", {
       method: "POST",
-      body: JSON.stringify({ productId }),
+      body: JSON.stringify(productId ? { productId } : {}),
     }),
 
-  sendSessionMessage: (sessionId: string, message: string) =>
+  sendSessionMessage: (sessionId: string, message: string, contextPart?: string) =>
     request<{ chatHistory: ChatMessage[]; resolutionStatus: string }>(`/sessions/${sessionId}/messages`, {
       method: "POST",
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, contextPart }),
     }),
 
   notifications: () => request<{ notifications: Array<{ id: string; title: string; message: string; read: boolean; createdAt: string }> }>("/notifications"),

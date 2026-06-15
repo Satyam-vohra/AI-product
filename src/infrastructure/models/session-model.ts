@@ -9,7 +9,7 @@ export interface IChatMessage {
 
 export interface IDiagnosticSession extends Document {
   userId: Schema.Types.ObjectId;
-  productId: Schema.Types.ObjectId;
+  productId?: Schema.Types.ObjectId;
   chatHistory: IChatMessage[];
   resolutionStatus: ResolutionStatus;
   assignedEngineerId?: Schema.Types.ObjectId;
@@ -46,7 +46,7 @@ const sessionSchema = new Schema<IDiagnosticSession>(
     productId: {
       type: Schema.Types.ObjectId,
       ref: 'Product',
-      required: [true, 'Product ID is required'],
+      required: false,
     },
     chatHistory: {
       type: [chatMessageSchema],

@@ -1,66 +1,176 @@
-import KnowledgeBaseModel from '../../infrastructure/models/kb-model';
-import { IChatMessage } from '../../infrastructure/models/session-model';
+import { env } from '../../config/environment';
 import { logger } from '../../core/utils/logger';
+import { IChatMessage } from '../../infrastructure/models/session-model';
+import RAGService from './rag-service';
+
+type ChatMessage = {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+};
+
+type OpenAIResponse = {
+  choices?: Array<{
+    message?: { content?: string };
+  }>;
+};
 
 export class AIService {
-  /**
-   * Generates a context-aware diagnostic response based on Knowledge Base (KB) lookup.
-   * This is a complete implementation of a RAG (Retrieval-Augmented Generation) pipeline.
-   */
   public static async generateDiagnosticResponse(
     productId: string,
     userMessage: string,
-    history: IChatMessage[]
+    history: IChatMessage[],
+    contextPart?: string
   ): Promise<string> {
     try {
-      logger.info(`AI Diagnostics - Fetching context for product: ${productId} with query: "${userMessage}"`);
+      logger.info(`AI Diagnostics - Generating LLM response for product: ${productId}`);
 
-      // 1. Retrieve context from Knowledge Base
-      // Perform text search index lookup, filtering by the specific product
-      let kbDocs = await KnowledgeBaseModel.find(
-        { productId, $text: { $search: userMessage } },
-        { score: { $meta: 'textScore' } }
-      )
-        .sort({ score: { $meta: 'textScore' } })
-        .limit(3);
+      const conversationText = [...history, { sender: 'user', message: userMessage, timestamp: new Date() }]
+        .filter((entry) => entry.sender === 'user')
+        .map((entry) => entry.message.trim())
+        .filter(Boolean)
+        .join('\n');
 
-      // Fallback: If no direct text search matches, search general tags matching user terms
-      if (kbDocs.length === 0) {
-        const terms = userMessage.split(/\s+/).filter(t => t.length > 2);
-        kbDocs = await KnowledgeBaseModel.find({
-          productId,
-          tags: { $in: terms },
-        }).limit(2);
+      const [citations, passport] = await Promise.all([
+        RAGService.queryKnowledgeBase(productId, conversationText || userMessage),
+        RAGService.generateProductPassport(productId),
+      ]);
+
+      if (!this.hasUsableApiKey()) {
+        return this.generateFallbackResponse(userMessage, citations, contextPart);
       }
 
-      // 2. Format context
-      const contextText = kbDocs.map((doc, idx) => `[Document ${idx + 1} - ${doc.title}]: ${doc.content}`).join('\n\n');
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${env.OPENAI_API_KEY?.trim()}`,
+        },
+        body: JSON.stringify({
+          model: env.OPENAI_MODEL,
+          max_tokens: 700,
+          messages: this.buildMessages(history, userMessage, contextPart, passport, citations),
+        }),
+      });
 
-      logger.info(`AI Diagnostics - Found ${kbDocs.length} matching knowledge documents.`);
-
-      // 3. Simulating LLM prompt formatting and response generation
-      // In a real application, you would call:
-      // const response = await openai.chat.completions.create({ model: 'gpt-4', messages: [...] })
-      // For this architecture, we implement a production-ready, context-aware rule engine fallback:
-      
-      let reply = '';
-      if (kbDocs.length > 0) {
-        reply = `Based on our Mantis Knowledge Base, here is the diagnostic advice:
-\n${kbDocs.map(d => `• **${d.title}**: ${d.content.substring(0, 180)}...`).join('\n')}
-\nDoes this resolve the problem, or would you like to escalate this ticket to a Service Engineer?`;
-      } else {
-        reply = `I've analyzed your description, but couldn't find a direct troubleshooting article in the product manual. 
-\nCould you specify:
-1. Any error code displayed on the screen?
-2. If the indicator LEDs are blinking or solid?
-\nAlternatively, you can click "Escalate to Service Engineer" to connect with a technician directly.`;
+      if (!response.ok) {
+        const errorText = await response.text();
+        logger.warn(`OpenAI response generation failed with ${response.status}: ${errorText}`);
+        return this.generateFallbackResponse(userMessage, citations, contextPart);
       }
 
-      return reply;
+      const payload = (await response.json()) as OpenAIResponse;
+      const outputText = payload.choices?.[0]?.message?.content?.trim() ?? '';
+
+      if (!outputText) {
+        logger.warn('OpenAI response generation returned an empty output_text payload');
+        return this.generateFallbackResponse(userMessage, citations, contextPart);
+      }
+
+      return outputText.trim();
     } catch (error: any) {
       logger.error(`AI Diagnostic Service error: ${error.message}`);
-      return "I'm sorry, I encountered an internal issue parsing the manuals. Please try again or request a technician's manual review.";
+      return this.generateFallbackResponse(userMessage, [], contextPart);
     }
   }
+
+  private static hasUsableApiKey(): boolean {
+    const apiKey = env.OPENAI_API_KEY?.trim();
+    return Boolean(apiKey && apiKey.toLowerCase() !== 'mock');
+  }
+
+  private static buildInstructions(
+    contextPart: string | undefined,
+    passport: Awaited<ReturnType<typeof RAGService.generateProductPassport>>,
+    citations: Awaited<ReturnType<typeof RAGService.queryKnowledgeBase>>
+  ): string {
+    const passportBlock = passport
+      ? [
+          `Product: ${passport.name}`,
+          `SKU: ${passport.sku}`,
+          `Category: ${passport.category}`,
+          `Manufacturer: ${passport.manufacturer}`,
+          `Warranty: ${passport.warrantyStatus}`,
+          `Health score: ${passport.healthScore}%`,
+          `Expected lifespan: ${passport.expectedLifespan}`,
+          `Suggested spares: ${passport.sparesList.join(', ')}`,
+        ].join('\n')
+      : 'Product passport unavailable.';
+
+    const manualBlock = citations.length > 0
+      ? citations
+          .map((citation, index) => {
+            const excerpt = citation.content?.trim() || 'No excerpt available.';
+            return `${index + 1}. ${citation.title} (score ${citation.score})\n${excerpt}`;
+          })
+          .join('\n\n')
+      : 'No high-confidence manual excerpt was retrieved.';
+
+    const focusLine = contextPart ? `Focused component: ${contextPart}` : 'Focused component: not specified';
+
+    return [
+      'You are Mantis AI, a diagnostic assistant for product troubleshooting.',
+      'Use the provided product and manual context to answer the user directly and practically.',
+      'Do not invent manuals, measurements, or fault codes that are not supported by the provided context.',
+      'If the evidence is weak, say what is known, what is uncertain, and ask the single best next diagnostic question.',
+      'When giving a likely cause or repair, reference the relevant manual titles in plain text.',
+      'Keep the answer concise, technical, and useful for troubleshooting.',
+      '',
+      focusLine,
+      passportBlock,
+      '',
+      'Retrieved manual context:',
+      manualBlock,
+    ].join('\n');
+  }
+
+  private static buildMessages(
+    history: IChatMessage[],
+    userMessage: string,
+    contextPart: string | undefined,
+    passport: Awaited<ReturnType<typeof RAGService.generateProductPassport>>,
+    citations: Awaited<ReturnType<typeof RAGService.queryKnowledgeBase>>
+  ): ChatMessage[] {
+    const messages: ChatMessage[] = [
+      { role: 'system', content: this.buildInstructions(contextPart, passport, citations) },
+    ];
+
+    history.slice(-8).forEach((entry) => {
+      messages.push({
+        role: entry.sender === 'user' ? 'user' : 'assistant',
+        content: entry.message,
+      });
+    });
+
+    const finalUserMessage = contextPart
+      ? `${userMessage}\nFocused component: ${contextPart}`
+      : userMessage;
+
+    messages.push({ role: 'user', content: finalUserMessage });
+    return messages;
+  }
+
+  private static generateFallbackResponse(
+    userMessage: string,
+    citations: Awaited<ReturnType<typeof RAGService.queryKnowledgeBase>>,
+    contextPart?: string
+  ): string {
+    const manualSummary = citations.length > 0
+      ? citations
+          .slice(0, 2)
+          .map((citation) => `- ${citation.title}${citation.content ? `: ${citation.content.slice(0, 160)}...` : ''}`)
+          .join('\n')
+      : '- No strong indexed manual match was found yet.';
+
+    const focusLine = contextPart ? `Focused component: ${contextPart}.\n` : '';
+
+    return [
+      `${focusLine}I analyzed your latest message: "${userMessage}".`,
+      'Here is the most relevant manual context I found:',
+      manualSummary,
+      '',
+      'Please share the exact observed error code, LED pattern, sound, or visible damage so I can narrow the diagnosis further.',
+    ].join('\n');
+  }
 }
+
 export default AIService;

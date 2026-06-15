@@ -30,11 +30,11 @@ router.get('/user', getUserSessions);
 router.get('/company', authorize(UserRole.COMPANY, UserRole.SERVICE_ENGINEER), getCompanySessions);
 
 // Individual ticket creation & details
-router.post('/', authorize(UserRole.USER), validateRequest(createSessionSchema), createSession);
+router.post('/', validateRequest(createSessionSchema), createSession);
 router.get('/:id', getSessionById);
 
 // Message communication (Sending chat queries)
-router.post('/:id/messages', authorize(UserRole.USER), validateRequest(sendMessageSchema), sendMessageToSession);
+router.post('/:id/messages', validateRequest(sendMessageSchema), sendMessageToSession);
 
 // Technician escalation & state controls
 router.post('/:id/assign', authorize(UserRole.COMPANY, UserRole.ADMIN), validateRequest(assignEngineerSchema), assignServiceEngineer);

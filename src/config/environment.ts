@@ -18,6 +18,7 @@ const envSchema = z.object({
   CLOUDINARY_API_KEY: z.string().optional().default('mock'),
   CLOUDINARY_API_SECRET: z.string().optional().default('mock'),
   OPENAI_API_KEY: z.string().optional().default('mock'),
+  OPENAI_MODEL: z.string().optional().default('gpt-4o-mini'),
 });
 
 const parseEnv = () => {

@@ -13,6 +13,7 @@ Required API variables:
 - `JWT_REFRESH_EXPIRATION`: Refresh-token lifetime, default `7d`.
 - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`: Upload provider credentials. Use `mock` for local no-op upload mode.
 - `OPENAI_API_KEY`: Reserved for hosted LLM integration. The current diagnostic engine has deterministic fallback behavior.
+- `OPENAI_MODEL`: Optional OpenAI model name for Responses API calls. Default is `gpt-5.5`.
 
 Required frontend variables:
 
