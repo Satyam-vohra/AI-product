@@ -1,0 +1,57 @@
+import { z } from 'zod';
+declare const envSchema: z.ZodObject<{
+    PORT: z.ZodDefault<z.ZodNumber>;
+    NODE_ENV: z.ZodDefault<z.ZodEnum<["development", "production", "test"]>>;
+    MONGO_URI: z.ZodString;
+    REDIS_URL: z.ZodOptional<z.ZodString>;
+    JWT_SECRET: z.ZodString;
+    JWT_REFRESH_SECRET: z.ZodString;
+    JWT_ACCESS_EXPIRATION: z.ZodDefault<z.ZodString>;
+    JWT_REFRESH_EXPIRATION: z.ZodDefault<z.ZodString>;
+    CLOUDINARY_CLOUD_NAME: z.ZodDefault<z.ZodOptional<z.ZodString>>;
+    CLOUDINARY_API_KEY: z.ZodDefault<z.ZodOptional<z.ZodString>>;
+    CLOUDINARY_API_SECRET: z.ZodDefault<z.ZodOptional<z.ZodString>>;
+    OPENAI_API_KEY: z.ZodDefault<z.ZodOptional<z.ZodString>>;
+}, "strip", z.ZodTypeAny, {
+    PORT: number;
+    NODE_ENV: "development" | "production" | "test";
+    MONGO_URI: string;
+    JWT_SECRET: string;
+    JWT_REFRESH_SECRET: string;
+    JWT_ACCESS_EXPIRATION: string;
+    JWT_REFRESH_EXPIRATION: string;
+    CLOUDINARY_CLOUD_NAME: string;
+    CLOUDINARY_API_KEY: string;
+    CLOUDINARY_API_SECRET: string;
+    OPENAI_API_KEY: string;
+    REDIS_URL?: string | undefined;
+}, {
+    MONGO_URI: string;
+    JWT_SECRET: string;
+    JWT_REFRESH_SECRET: string;
+    PORT?: number | undefined;
+    NODE_ENV?: "development" | "production" | "test" | undefined;
+    REDIS_URL?: string | undefined;
+    JWT_ACCESS_EXPIRATION?: string | undefined;
+    JWT_REFRESH_EXPIRATION?: string | undefined;
+    CLOUDINARY_CLOUD_NAME?: string | undefined;
+    CLOUDINARY_API_KEY?: string | undefined;
+    CLOUDINARY_API_SECRET?: string | undefined;
+    OPENAI_API_KEY?: string | undefined;
+}>;
+export declare const env: {
+    PORT: number;
+    NODE_ENV: "development" | "production" | "test";
+    MONGO_URI: string;
+    JWT_SECRET: string;
+    JWT_REFRESH_SECRET: string;
+    JWT_ACCESS_EXPIRATION: string;
+    JWT_REFRESH_EXPIRATION: string;
+    CLOUDINARY_CLOUD_NAME: string;
+    CLOUDINARY_API_KEY: string;
+    CLOUDINARY_API_SECRET: string;
+    OPENAI_API_KEY: string;
+    REDIS_URL?: string | undefined;
+};
+export type Environment = z.infer<typeof envSchema>;
+export {};

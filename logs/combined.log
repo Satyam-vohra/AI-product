@@ -1,0 +1,701 @@
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"error","message":"Redis Error: "}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"error","message":"Redis Error: AggregateError"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5050                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5050                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Port 5001 is already in use (EADDRINUSE). Trying next port... (remaining tries: 8)"}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Port: 5001                  "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Port: 5002                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5001                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"warn","message":"Port 5001 is already in use (EADDRINUSE). Trying next port... (remaining tries: 8)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5002                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5001                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"warn","message":"Port 5001 is already in use (EADDRINUSE). Trying next port... (remaining tries: 8)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5002                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"warn","message":"Port 5001 is already in use (EADDRINUSE). Trying next port... (remaining tries: 8)"}
+{"level":"warn","message":"Port 5002 is already in use (EADDRINUSE). Trying next port... (remaining tries: 7)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5003                  "}
+{"level":"info","message":"================================="}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Access token is missing or malformed - Stack: Error: Access token is missing or malformed\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:18:17)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Access token is missing or malformed - Stack: Error: Access token is missing or malformed\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:18:17)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/auth/login - Status: 401 - Message: Invalid email or password - Stack: Error: Invalid email or password\n    at login (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\presentation\\controllers\\auth-controller.ts:82:13)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"warn","message":"Port 5000 is already in use (EADDRINUSE). Trying next port... (remaining tries: 9)"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5001                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"POST /api/v1/kb - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"warn","message":"Redis not initialized (non-production or REDIS_URL missing). Using in-memory cache."}
+{"level":"info","message":"Cloudinary initialized successfully."}
+{"level":"info","message":"MongoDB connected successfully."}
+{"level":"info","message":"VectorDB: Loaded KB embeddings into memory index"}
+{"level":"info","message":"================================="}
+{"level":"info","message":"  Mantis AI Backend Active      "}
+{"level":"info","message":"  Environment: development  "}
+{"level":"info","message":"  Port: 5000                  "}
+{"level":"info","message":"================================="}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"GET /api/v1/auth/profile - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/notifications - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"GET /api/v1/notifications - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"GET /api/v1/dashboards/user - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:286:9\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:328:13)"}
+{"level":"error","message":"GET /api/v1/dashboards/user - Status: 401 - Message: Invalid or expired access token - Stack: Error: Invalid or expired access token\n    at authenticate (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\auth-middleware.ts:30:10)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:286:9\n    at router.process_params (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\node_modules\\express\\lib\\router\\index.js:328:13)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}
+{"level":"error","message":"POST /api/v1/analytics/events - Status: 422 - Message: Request validation failed - Stack: Error: Request validation failed\n    at C:\\Users\\shiva\\OneDrive\\Desktop\\AI\\src\\core\\middlewares\\validation-middleware.ts:17:21\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)"}

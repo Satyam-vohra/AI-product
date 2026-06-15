@@ -1,0 +1,4 @@
+- [ ] Fix product gallery click handler so non-AeroCool products update `selectedPart` and re-render `ProductViewer3D`
+- [ ] Run frontend lint to confirm no remaining ESLint warnings/errors
+- [ ] Smoke test: verify switching products changes viewer/selection
+- [ ] Create git branch, commit changes, and provide commands to push to GitHub

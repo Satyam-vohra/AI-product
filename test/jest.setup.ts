@@ -1,0 +1,9 @@
+process.env.NODE_ENV = 'test';
+process.env.PORT = '5000';
+process.env.MONGO_URI = 'mongodb://127.0.0.1:27017/mantis_ai_test';
+process.env.JWT_SECRET = 'test_access_secret';
+process.env.JWT_REFRESH_SECRET = 'test_refresh_secret';
+process.env.CLIENT_URL = 'http://localhost:3000';
+process.env.CLOUDINARY_CLOUD_NAME = 'mock';
+process.env.CLOUDINARY_API_KEY = 'mock';
+process.env.CLOUDINARY_API_SECRET = 'mock';
