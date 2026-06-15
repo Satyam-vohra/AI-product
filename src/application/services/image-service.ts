@@ -1,25 +1,29 @@
-import RAGService from './rag-service';
-import { logger } from '../../core/utils/logger';
+import express from 'express';
+import ImageService from './image-service';
 
-export class ImageService {
-  /**
-   * Simple image diagnostic routine: runs OCR and looks for keywords.
-   */
-  public static async diagnoseImage(buffer: Buffer, fileName: string) {
-    logger.info(`Image Diagnosis - processing ${fileName}`);
-    const ocr = await RAGService.performOCR(buffer, fileName);
-    const findings: string[] = [];
-    const lower = ocr.toLowerCase();
-    if (lower.includes('compressor')) findings.push('Compressor temperature flags detected');
-    if (lower.includes('voltage') || lower.includes('battery')) findings.push('Power subsystem irregularity reported');
-    if (lower.includes('leak') || lower.includes('pressure')) findings.push('Pressure leak or valve anomaly detected');
+const router = express.Router();
 
-    return {
-      ocrText: ocr,
-      findings,
-      summary: findings.length ? findings.join('; ') : 'No clear hardware indicators found in image OCR',
-    };
+router.post('/diagnose-image-url', async (req, res) => {
+  try {
+    const { imageUrl } = req.body;
+
+    if (!imageUrl) {
+      return res.status(400).json({
+        success: false,
+        message: 'imageUrl is required',
+      });
+    }
+
+    const result =
+      await ImageService.diagnoseImageFromUrl(imageUrl);
+
+    res.json(result);
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
-}
+});
 
-export default ImageService;
+export default router;
