@@ -9,6 +9,7 @@ import notificationRoutes from './notification-routes';
 import landingRoutes from './landing-routes';
 import searchRoutes from './search-routes';
 import analyticsRoutes from './analytics-routes';
+import imageRoutes from './image-routes';
 
 const router = Router();
 
@@ -23,5 +24,6 @@ router.use('/notifications', notificationRoutes);
 router.use('/landing', landingRoutes);
 router.use('/search', searchRoutes);
 router.use('/analytics', analyticsRoutes);
+router.use('/images', imageRoutes);
 
 export default router;
