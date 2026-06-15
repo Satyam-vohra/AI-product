@@ -18,6 +18,7 @@ const router = Router();
 
 const uploadFields = upload.fields([
   { name: 'manual', maxCount: 1 },
+  { name: 'video', maxCount: 1 },
   { name: 'images', maxCount: 5 },
 ]);
 

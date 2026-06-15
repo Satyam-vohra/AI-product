@@ -57,15 +57,26 @@ export class RAGService {
       // Ensure index loaded
       await VectorDB.loadIndex();
       const hits = VectorDB.query(qVec, 5);
+      const kbById = new Map(
+        (
+          await KnowledgeBaseModel.find({
+            _id: { $in: hits.map((hit) => hit.record.kbId) },
+          })
+            .select('title content productId')
+            .lean()
+        ).map((doc) => [String(doc._id), doc])
+      );
       const results: DocumentChunk[] = [];
       for (const h of hits) {
+        const doc = kbById.get(h.record.kbId);
         // Only return items that belong to productId when possible
-        if (h.record.metadata?.productId && String(h.record.metadata.productId) !== productId) continue;
+        const docProductId = doc?.productId || h.record.metadata?.productId;
+        if (docProductId && String(docProductId) !== productId) continue;
         results.push({
           id: `${h.record.kbId}_vec`,
           kbId: h.record.kbId,
-          title: h.record.title,
-          content: '',
+          title: doc?.title || h.record.title,
+          content: doc?.content?.slice(0, 320) || '',
           score: parseFloat(h.score.toFixed(2)),
         });
       }

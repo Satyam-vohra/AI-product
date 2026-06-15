@@ -5,6 +5,7 @@ import {
   getKBById,
   updateKBEntry,
   deleteKBEntry,
+  serveKBFile,
 } from '../controllers/kb-controller';
 import { upload } from '../../core/utils/uploader';
 import { validateRequest } from '../../core/middlewares/validation-middleware';
@@ -16,6 +17,7 @@ const router = Router();
 
 // Public routes
 router.get('/', getKBEntries);
+router.get('/:id/file', serveKBFile);
 router.get('/:id', getKBById);
 
 // Protected company/admin routes (Supports upload of a technical manual via 'file')

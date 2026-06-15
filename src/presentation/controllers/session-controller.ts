@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import DiagnosticSessionModel from '../../infrastructure/models/session-model';
 import ProductModel from '../../infrastructure/models/product-model';
 import UserModel from '../../infrastructure/models/user-model';
-import AIService from '../../application/services/ai-service';
 import AIAgentService from '../../application/services/ai-agent-service';
 import { ForbiddenError, NotFoundError, BadRequestError } from '../../core/errors/app-error';
 import { AuthenticatedRequest } from '../../core/middlewares/auth-middleware';
@@ -18,23 +17,31 @@ export const createSession = async (
     const userId = authReq.user?.userId;
     const { productId } = req.body;
 
-    const product = await ProductModel.findById(productId);
-    if (!product) {
-      throw new NotFoundError('Product not found');
+    let productName = 'general diagnostics';
+    if (productId) {
+      const product = await ProductModel.findById(productId);
+      if (!product) {
+        throw new NotFoundError('Product not found');
+      }
+      productName = product.name;
     }
 
-    const session = await DiagnosticSessionModel.create({
+    const sessionData: Record<string, unknown> = {
       userId,
-      productId,
       chatHistory: [
         {
           sender: 'ai',
-          message: `Hello! I am Mantis AI Diagnostic agent for the **${product.name}**. How can I help you troubleshoot today?`,
+          message: productId
+            ? `Hello! I am Mantis AI Diagnostic agent for the **${productName}**. How can I help you troubleshoot today?`
+            : `Hello! I am Mantis AI Diagnostic agent. Describe the symptom, error code, or component you want to troubleshoot.`,
           timestamp: new Date(),
         },
       ],
       resolutionStatus: ResolutionStatus.OPEN,
-    });
+    };
+    if (productId) sessionData.productId = productId;
+
+    const session = await DiagnosticSessionModel.create(sessionData);
 
     res.status(201).json({
       status: 'success',
@@ -95,7 +102,7 @@ export const sendMessageToSession = async (
 ): Promise<void> => {
   try {
     const { id } = req.params;
-    const { message } = req.body;
+    const { message, contextPart } = req.body;
     const authReq = req as AuthenticatedRequest;
     const { userId, role } = authReq.user!;
 
@@ -125,7 +132,10 @@ export const sendMessageToSession = async (
     if (session.assignedEngineerId) {
       aiResponse = "A technician has been assigned to this ticket and will review the diagnostic log shortly.";
     } else {
-      const agentResult = await AIAgentService.processDiagnosticStep(session, message);
+      const contextAwareMessage = contextPart
+        ? `${message}\nFocused component: ${contextPart}`
+        : message;
+      const agentResult = await AIAgentService.processDiagnosticStep(session, contextAwareMessage);
       aiResponse = agentResult.nextMessage;
     }
 

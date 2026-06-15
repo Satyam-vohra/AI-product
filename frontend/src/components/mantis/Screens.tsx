@@ -39,7 +39,7 @@ import {
   Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { api, getAuthState, type DiagnosticSession, type KnowledgeRecord } from "@/lib/api";
+import { api, getAuthState, API_BASE_URL, type DiagnosticSession, type KnowledgeRecord } from "@/lib/api";
 import { ProductViewer3D } from "./ProductViewer3D";
 import {
   adminCards,
@@ -101,9 +101,9 @@ function PageHeader({
   );
 }
 
-function PrimaryButton({ children }: { children: React.ReactNode }) {
+function PrimaryButton({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) {
   return (
-    <button className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-cyan-500 px-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
+    <button onClick={onClick} className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-cyan-500 px-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
       {children}
     </button>
   );
@@ -383,9 +383,76 @@ function SmartSearchPanel() {
   );
 }
 
+function CreateProductModal({ onClose, onCreated }: { onClose: () => void; onCreated: () => void }) {
+  const [form, setForm] = useState({ sku: "", name: "", category: "", description: "" });
+  const [error, setError] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+
+  const submit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    setSaving(true);
+    setError("");
+    try {
+      await api.createProduct(form);
+      onCreated();
+      onClose();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to create product");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const inputCls = "w-full rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400";
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onClick={onClose}>
+      <div className="w-full max-w-md rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 shadow-xl" onClick={(e) => e.stopPropagation()}>
+        <div className="mb-5 flex items-center justify-between">
+          <h2 className="text-lg font-semibold">Add product</h2>
+          <button onClick={onClose} className="flex h-8 w-8 items-center justify-center rounded-md hover:bg-[hsl(var(--secondary))]">
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <form onSubmit={submit} className="space-y-4">
+          <div>
+            <label className="mb-1 block text-xs text-[hsl(var(--muted-foreground))]">Product name</label>
+            <input className={inputCls} value={form.name} onChange={set("name")} placeholder="AeroCool X200 Compressor" required />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="mb-1 block text-xs text-[hsl(var(--muted-foreground))]">SKU</label>
+              <input className={inputCls} value={form.sku} onChange={set("sku")} placeholder="ACX-200" required />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-[hsl(var(--muted-foreground))]">Category</label>
+              <input className={inputCls} value={form.category} onChange={set("category")} placeholder="Compressor" required />
+            </div>
+          </div>
+          <div>
+            <label className="mb-1 block text-xs text-[hsl(var(--muted-foreground))]">Description</label>
+            <textarea className={inputCls} rows={3} value={form.description} onChange={set("description")} placeholder="Brief product description…" required />
+          </div>
+          {error && <p className="text-xs text-red-400">{error}</p>}
+          <div className="flex justify-end gap-2 pt-1">
+            <button type="button" onClick={onClose} className="rounded-md border border-[hsl(var(--border))] px-4 py-2 text-sm hover:bg-[hsl(var(--secondary))]">Cancel</button>
+            <button type="submit" disabled={saving} className="rounded-md bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-400 disabled:opacity-60">
+              {saving ? "Creating…" : "Create product"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export function MarketplaceScreen() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
 
   const runSearch = (value: string) => {
     setQuery(value);
@@ -395,11 +462,17 @@ export function MarketplaceScreen() {
 
   return (
     <div className="space-y-6">
+      {showCreate && (
+        <CreateProductModal
+          onClose={() => setShowCreate(false)}
+          onCreated={() => setShowCreate(false)}
+        />
+      )}
       <PageHeader
         eyebrow="Marketplace"
         title="Certified products and diagnostics"
         description="Browse connected products, compare support coverage, inspect manuals, and launch AI troubleshooting from the catalog."
-        action={<PrimaryButton><Plus className="h-4 w-4" /> Add product</PrimaryButton>}
+        action={<PrimaryButton onClick={() => setShowCreate(true)}><Plus className="h-4 w-4" /> Add product</PrimaryButton>}
       />
       <div className="grid gap-4 lg:grid-cols-[1fr_280px]">
         <Panel className="p-4">
@@ -490,6 +563,8 @@ function Flowchart({ selectedPart, activeStep }: { selectedPart: ProductPart; ac
 }
 
 function AIChat({ selectedPart, onProgress }: { selectedPart: ProductPart; onProgress: () => void }) {
+  const toUiMessages = (chatHistory: Array<{ sender: "user" | "ai" | "agent"; message: string }>) =>
+    chatHistory.map((entry) => ({ from: entry.sender, text: entry.message }));
   const [message, setMessage] = useState("");
   const [session, setSession] = useState<DiagnosticSession | null>(null);
   const [pending, setPending] = useState(false);
@@ -509,24 +584,34 @@ function AIChat({ selectedPart, onProgress }: { selectedPart: ProductPart; onPro
       if (!activeSession && getAuthState()) {
         const productList = await api.products();
         const firstProduct = productList.data.products[0];
-        if (firstProduct?._id) {
-          const created = await api.createSession(firstProduct._id);
-          activeSession = created.data.session;
-          setSession(activeSession);
-        }
+        const created = await api.createSession(firstProduct?._id);
+        activeSession = created.data.session;
+        setSession(activeSession);
       }
 
       if (activeSession?._id) {
-        const response = await api.sendSessionMessage(activeSession._id, text);
-        const latest = response.data.chatHistory.at(-1);
-        setMessages((items) => [...items, { from: "ai", text: latest?.message || `${selectedPart.name}: ${selectedPart.action}` }]);
+        const response = await api.sendSessionMessage(activeSession._id, text, selectedPart.name);
+        setMessages(toUiMessages(response.data.chatHistory));
       } else {
-        setMessages((items) => [...items, { from: "ai", text: `${selectedPart.name}: ${selectedPart.action}` }]);
+        setMessages((items) => [
+          ...items,
+          {
+            from: "ai",
+            text: "Please sign in to use the live diagnostic agent.",
+          },
+        ]);
       }
       onProgress();
-    } catch {
-      setMessages((items) => [...items, { from: "ai", text: `${selectedPart.name}: ${selectedPart.action}` }]);
-      onProgress();
+    } catch (error) {
+      setMessages((items) => [
+        ...items,
+        {
+          from: "ai",
+          text: error instanceof Error
+            ? error.message
+            : "The diagnostic agent could not respond right now. Please try again.",
+        },
+      ]);
     } finally {
       setPending(false);
     }
@@ -545,7 +630,13 @@ function AIChat({ selectedPart, onProgress }: { selectedPart: ProductPart; onPro
               key={`${item.from}-${index}`}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`max-w-[88%] rounded-lg px-3 py-2 text-sm leading-6 ${item.from === "user" ? "ml-auto bg-cyan-500 text-slate-950" : "bg-[hsl(var(--secondary))]"}`}
+              className={`max-w-[88%] rounded-lg px-3 py-2 text-sm leading-6 ${
+                item.from === "user"
+                  ? "ml-auto bg-cyan-500 text-slate-950"
+                  : item.from === "agent"
+                    ? "border border-amber-400/30 bg-amber-400/10 text-amber-100"
+                    : "bg-[hsl(var(--secondary))]"
+              }`}
             >
               {item.text}
             </motion.div>
@@ -570,9 +661,125 @@ function AIChat({ selectedPart, onProgress }: { selectedPart: ProductPart; onPro
   );
 }
 
+function GalleryPanel({ images, onUpload }: { images: string[]; onUpload?: (files: FileList | null) => void }) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+
+  return (
+    <Panel className="p-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="font-semibold">Product Gallery</h2>
+          <p className="mt-1 text-xs text-[hsl(var(--muted-foreground))]">{images.length} image{images.length !== 1 ? "s" : ""}</p>
+        </div>
+        {onUpload && (
+          <>
+            <input ref={inputRef} type="file" className="sr-only" accept="image/jpeg,image/png,image/webp" multiple
+              onChange={(e) => { onUpload(e.target.files); e.target.value = ""; }} />
+            <button onClick={() => inputRef.current?.click()}
+              className="flex h-9 items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 text-sm hover:bg-[hsl(var(--secondary))]">
+              <Upload className="h-4 w-4" /> Add image
+            </button>
+          </>
+        )}
+      </div>
+
+      {preview && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={() => setPreview(null)}>
+          <img src={preview} alt="Preview" className="max-h-[80vh] max-w-full rounded-lg object-contain" />
+        </div>
+      )}
+
+      <div className="mt-4 space-y-2">
+        {images.length > 0 && (
+          <>
+            {/* Large primary image */}
+            <button type="button" onClick={() => setPreview(images[0])}
+              className="w-full overflow-hidden rounded-md border border-[hsl(var(--border))] hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-cyan-400">
+              <img src={images[0]} alt="Product image 1" className="h-48 w-full object-cover" />
+            </button>
+            {/* Remaining thumbnails in 3-col grid */}
+            {images.length > 1 && (
+              <div className="grid grid-cols-3 gap-2">
+                {images.slice(1).map((url, i) => (
+                  <button key={i + 1} type="button" onClick={() => setPreview(url)}
+                    className="aspect-square overflow-hidden rounded-md border border-[hsl(var(--border))] hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                    <img src={url} alt={`Product image ${i + 2}`} className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+        {images.length === 0 && onUpload && (
+          <button type="button" onClick={() => inputRef.current?.click()}
+            className="w-full h-32 rounded-md border border-dashed border-[hsl(var(--border))] flex flex-col items-center justify-center gap-2 hover:bg-[hsl(var(--secondary))] transition">
+            <Upload className="h-6 w-6 text-cyan-400" />
+            <span className="text-xs text-[hsl(var(--muted-foreground))]">Click to upload — select multiple at once</span>
+          </button>
+        )}
+        {images.length === 0 && !onUpload && (
+          <div className="flex h-24 items-center justify-center rounded-md border border-dashed border-[hsl(var(--border))]">
+            <p className="text-xs text-[hsl(var(--muted-foreground))]">No images uploaded</p>
+          </div>
+        )}
+      </div>
+    </Panel>
+  );
+}
+
 export function ProductScreen() {
   const searchParams = useSearchParams();
   const productName = searchParams.get("product");
+  const [apiProduct, setApiProduct] = useState<import("@/lib/api").ProductRecord | null>(null);
+  const [uploadStatus, setUploadStatus] = useState("");
+
+  useEffect(() => {
+    api.products(productName ?? "")
+      .then((result) => {
+        const match = productName
+          ? (result.data.products.find((p) => p.name.toLowerCase() === productName.toLowerCase()) ?? result.data.products[0])
+          : result.data.products[0];
+        if (match) setApiProduct(match);
+      })
+      .catch(() => undefined);
+  }, [productName]);
+
+  const uploadFile = async (file: File | undefined, field: "manual" | "video") => {
+    if (!file) return;
+    if (!apiProduct) {
+      setUploadStatus("Product not found in database — create this product first.");
+      return;
+    }
+    setUploadStatus(`Uploading…`);
+    const formData = new FormData();
+    formData.append(field, file);
+    try {
+      const result = await api.updateProduct(apiProduct._id, formData);
+      setApiProduct(result.data.product);
+      setUploadStatus(field === "manual" ? "Manual PDF uploaded" : "Video uploaded");
+    } catch (err) {
+      setUploadStatus(err instanceof Error ? err.message : "Upload failed");
+    }
+  };
+
+  const uploadImages = async (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    if (!apiProduct) {
+      setUploadStatus("Product not found in database — create this product first.");
+      return;
+    }
+    setUploadStatus(`Uploading ${files.length} image${files.length > 1 ? "s" : ""}…`);
+    const formData = new FormData();
+    Array.from(files).forEach((f) => formData.append("images", f));
+    try {
+      const result = await api.updateProduct(apiProduct._id, formData);
+      setApiProduct(result.data.product);
+      setUploadStatus(`${files.length} image${files.length > 1 ? "s" : ""} added to gallery`);
+    } catch (err) {
+      setUploadStatus(err instanceof Error ? err.message : "Upload failed");
+    }
+  };
 
   const mapProductNameToPart = (name: string | null | undefined): ProductPart => {
     const product = products.find((p) => p.name === name);
@@ -599,23 +806,7 @@ export function ProductScreen() {
   const defaultPart = useMemo(() => mapProductNameToPart(productName), [productName]);
   const [selectedPart, setSelectedPart] = useState<ProductPart>(() => defaultPart);
 
-  const openAeroCoolMoreInfo = () => {
-    window.open("https://aerocool.io/product/p500b-digi", "_blank", "noopener,noreferrer");
-  };
 
-  const openVoltaEdgeBatteryB45MoreInfo = () => {
-    window.open("https://www.everyonechoice.com/battery/volta-drive-55b24l-45-ah", "_blank", "noopener,noreferrer");
-  };
-
-  const openVoltaEdgeBatteryB45Secondary = () => {
-    // User requested: "VoltEdge Battery B45" (VoltaEdge / VoltEdge spelling varies in requests)
-    window.open("https://www.everyonechoice.com/battery/volta-drive-55b24l-45-ah", "_blank", "noopener,noreferrer");
-  };
-
-  const goInsideAeroCoolX200 = () => {
-    const compressor = productParts.find((p) => p.id === "compressor");
-    if (compressor) setSelectedPart(compressor);
-  };
 
   const headerTitle =
     productName && products.some((p) => p.name === productName) ? productName : "AeroCool X200 Compressor";
@@ -634,86 +825,85 @@ export function ProductScreen() {
         <PartDetail part={selectedPart} />
       </div>
 
+      {uploadStatus && <Panel className="p-3 text-sm">{uploadStatus}</Panel>}
+
       <div className="grid gap-4 lg:grid-cols-3">
-        <MediaPanel type="PDF Viewer" icon={FileText} title="Service manual v4.2" actionIcon={Download} />
-        <MediaPanel type="Video Viewer" icon={Play} title="Pressure loop teardown" actionIcon={Eye} />
+        <MediaPanel
+          type="PDF Viewer"
+          icon={FileText}
+          title={apiProduct?.manualUrl ? `${headerTitle} — Service Manual` : "Service manual"}
+          actionIcon={Download}
+          url={apiProduct?.manualUrl ? `${API_BASE_URL}/proxy/file?url=${encodeURIComponent(apiProduct.manualUrl)}` : undefined}
+          fileType="pdf"
+          onUpload={(f) => uploadFile(f, "manual")}
+          accept=".pdf"
+        />
+        <MediaPanel
+          type="Video Viewer"
+          icon={Play}
+          title={apiProduct?.videoUrl ? `${headerTitle} — Teardown` : "Teardown walkthrough"}
+          actionIcon={Eye}
+          url={apiProduct?.videoUrl}
+          fileType="video"
+          onUpload={(f) => uploadFile(f, "video")}
+          accept="video/mp4,video/webm,video/quicktime"
+        />
 
-        <Panel className="p-4">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h2 className="font-semibold">Product Gallery</h2>
-              <p className="mt-1 text-xs text-[hsl(var(--muted-foreground))]">Tap a product to focus its component.</p>
-            </div>
-
-            <button
-              type="button"
-              onClick={openAeroCoolMoreInfo}
-              className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--secondary))] px-3 text-sm font-semibold text-cyan-200 transition hover:bg-[hsl(var(--secondary))]/70"
-              aria-label="More information about AeroCool X200"
-            >
-              More information
-            </button>
-          </div>
-
-          {(productName?.toLowerCase().includes("b45") || productName?.toLowerCase().includes("voltaedge")) && (
-            <div className="mt-3 flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={openVoltaEdgeBatteryB45MoreInfo}
-                className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--secondary))] px-3 text-sm font-semibold text-cyan-200 transition hover:bg-[hsl(var(--secondary))]/70"
-                aria-label="More information about VoltaEdge Battery B45"
-              >
-                VoltaEdge Battery B45 - link
-              </button>
-
-              <button
-                type="button"
-                onClick={openVoltaEdgeBatteryB45Secondary}
-                className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--secondary))] px-3 text-sm font-semibold text-cyan-200 transition hover:bg-[hsl(var(--secondary))]/70"
-                aria-label="VoltaEdge Battery B45 secondary link"
-              >
-                VoltaEdge Battery B45 - more info
-              </button>
-            </div>
-          )}
-
-          <div className="mt-4 grid grid-cols-3 gap-2">
-            {products.map((product) => {
-              const isAeroCool = product.name === "AeroCool X200 Compressor";
-
-              const mapProductToPart = (): ProductPart => {
-                if (isAeroCool) {
-                  const compressor = productParts.find((p) => p.id === "compressor");
-                  return compressor ?? productParts[2] ?? productParts[0];
-                }
-                const pump = productParts.find((p) => p.id === "pump");
-                if (pump) return pump;
-
-                const nonCompressor = productParts.find((p) => p.id !== "compressor");
-                return nonCompressor ?? productParts[2] ?? productParts[0];
-              };
-
-              return (
-                <button
-                  key={product.name}
-                  type="button"
-                  onClick={() => {
-                    if (isAeroCool) {
-                      goInsideAeroCoolX200();
-                      return;
-                    }
-                    setSelectedPart(mapProductToPart());
-                  }}
-                  className="aspect-square rounded-md text-left transition hover:opacity-95 focus:outline-none focus:ring-4 focus:ring-cyan-400/30"
-                  style={{ background: product.image }}
-                  aria-label={product.name}
-                />
-              );
-            })}
-          </div>
-        </Panel>
+        <GalleryPanel
+          images={apiProduct?.imageUrls ?? []}
+          onUpload={uploadImages}
+        />
       </div>
     </div>
+  );
+}
+
+function PdfFrame({ url, title }: { url: string; title: string }) {
+  const [blobUrl, setBlobUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    let objectUrl: string | null = null;
+    setLoading(true);
+    setError(false);
+    setBlobUrl(null);
+    fetch(url)
+      .then((r) => {
+        if (!r.ok) throw new Error("fetch failed");
+        return r.arrayBuffer();
+      })
+      .then((buf) => {
+        const blob = new Blob([buf], { type: "application/pdf" });
+        objectUrl = URL.createObjectURL(blob);
+        setBlobUrl(objectUrl);
+      })
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+    return () => { if (objectUrl) URL.revokeObjectURL(objectUrl); };
+  }, [url]);
+
+  if (loading) {
+    return (
+      <div className="flex h-60 items-center justify-center gap-2 text-sm text-[hsl(var(--muted-foreground))]">
+        <FileText className="h-5 w-5 animate-pulse text-cyan-400" /> Loading PDF…
+      </div>
+    );
+  }
+  if (error || !blobUrl) {
+    return (
+      <div className="flex h-60 flex-col items-center justify-center gap-3">
+        <FileText className="h-10 w-10 text-cyan-400" />
+        <p className="text-sm text-[hsl(var(--muted-foreground))]">Could not load PDF</p>
+        <a href={url} target="_blank" rel="noopener noreferrer"
+          className="inline-flex h-8 items-center gap-1.5 rounded-md bg-cyan-500 px-3 text-xs font-semibold text-slate-950 hover:bg-cyan-400">
+          <Eye className="h-3.5 w-3.5" /> Open in new tab
+        </a>
+      </div>
+    );
+  }
+  return (
+    <iframe src={blobUrl} title={title} className="w-full border-0" style={{ height: 480 }} />
   );
 }
 
@@ -722,25 +912,104 @@ function MediaPanel({
   title,
   icon: Icon,
   actionIcon: ActionIcon,
+  url,
+  fileType,
+  onUpload,
+  accept,
 }: {
   type: string;
   title: string;
   icon: LucideIcon;
   actionIcon: LucideIcon;
+  url?: string;
+  fileType?: "pdf" | "video";
+  onUpload?: (file: File) => void;
+  accept?: string;
 }) {
+  const uploadRef = useRef<HTMLInputElement | null>(null);
+  const isPdf = fileType === "pdf" || (url && /\.(pdf|doc|docx|txt)([?#]|$)/i.test(url));
+  const isVideo = fileType === "video" || (url && /\.(mp4|webm|ogg|mov)([?#]|$)/i.test(url));
+  const isYoutube = url && /youtube\.com|youtu\.be/.test(url);
+
+  const embedUrl = isYoutube
+    ? url.replace("watch?v=", "embed/").replace("youtu.be/", "www.youtube.com/embed/")
+    : undefined;
+
   return (
     <Panel className="p-4">
+      {onUpload && (
+        <input
+          ref={uploadRef}
+          type="file"
+          className="sr-only"
+          accept={accept}
+          onChange={(e) => { const f = e.target.files?.[0]; if (f) onUpload(f); e.target.value = ""; }}
+        />
+      )}
       <div className="flex items-center justify-between">
         <div>
           <p className="text-xs text-[hsl(var(--muted-foreground))]">{type}</p>
           <h2 className="mt-1 font-semibold">{title}</h2>
         </div>
-        <button className="flex h-9 w-9 items-center justify-center rounded-md border border-[hsl(var(--border))]">
-          <ActionIcon className="h-4 w-4" />
-        </button>
+        <div className="flex items-center gap-1">
+          {onUpload && (
+            <button
+              onClick={() => uploadRef.current?.click()}
+              title={url ? "Replace file" : "Upload file"}
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))]"
+            >
+              <Upload className="h-4 w-4" />
+            </button>
+          )}
+          {url ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))]"
+            >
+              <ActionIcon className="h-4 w-4" />
+            </a>
+          ) : (
+            <button className="flex h-9 w-9 items-center justify-center rounded-md border border-[hsl(var(--border))] opacity-40">
+              <ActionIcon className="h-4 w-4" />
+            </button>
+          )}
+        </div>
       </div>
-      <div className="mt-4 flex aspect-video items-center justify-center rounded-md border border-dashed border-[hsl(var(--border))] bg-[hsl(var(--secondary))]">
-        <Icon className="h-10 w-10 text-cyan-400" />
+      <div className="mt-4 overflow-hidden rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--secondary))]">
+        {isPdf && url ? (
+          <PdfFrame url={url} title={title} />
+        ) : isYoutube && embedUrl ? (
+          <iframe
+            src={embedUrl}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="aspect-video w-full"
+          />
+        ) : isVideo && url ? (
+          <video src={url} controls className="aspect-video w-full" />
+        ) : (
+          <div
+            onClick={() => onUpload && uploadRef.current?.click()}
+            className={`flex aspect-video flex-col items-center justify-center gap-3 p-4 ${onUpload ? "cursor-pointer hover:bg-[hsl(var(--border))] transition-colors" : ""}`}
+          >
+            <Icon className="h-10 w-10 text-cyan-400" />
+            {onUpload ? (
+              <>
+                <p className="text-sm font-medium">Click to upload {fileType === "pdf" ? "PDF" : "video"}</p>
+                <p className="text-xs text-[hsl(var(--muted-foreground))]">or use the upload button above</p>
+              </>
+            ) : url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="max-w-xs truncate text-center text-xs text-cyan-400 underline">
+                Open file directly
+              </a>
+            ) : (
+              <p className="text-xs text-[hsl(var(--muted-foreground))]">No file attached</p>
+            )}
+          </div>
+        )}
       </div>
     </Panel>
   );
@@ -772,6 +1041,7 @@ export function KnowledgeScreen() {
   const [query, setQuery] = useState("");
   const [remoteItems, setRemoteItems] = useState<KnowledgeRecord[]>([]);
   const [uploadMessage, setUploadMessage] = useState("");
+  const [selectedItem, setSelectedItem] = useState<KnowledgeRecord | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const filtered = remoteItems.length > 0
     ? remoteItems.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) || item.tags.join(" ").toLowerCase().includes(query.toLowerCase()))
@@ -838,21 +1108,42 @@ export function KnowledgeScreen() {
             </tr>
           </thead>
           <tbody>
-            {filtered.map((item) => (
-              <tr key={item.title} className="border-b border-[hsl(var(--border))] last:border-0 hover:bg-[hsl(var(--secondary))]">
-                <td className="px-4 py-3 font-medium">{item.title}</td>
-                <td className="px-4 py-3">{"type" in item ? item.type : item.tags.join(", ") || "Document"}</td>
-                <td className="px-4 py-3">{"owner" in item ? item.owner : item.productId?.name || "Workspace"}</td>
-                <td className="px-4 py-3 text-cyan-400">{"confidence" in item ? item.confidence : "Indexed"}</td>
-              </tr>
-            ))}
+            {filtered.map((item) => {
+              const isRemote = "_id" in item;
+              const isSelected = isRemote && selectedItem?._id === (item as KnowledgeRecord)._id;
+              return (
+                <tr
+                  key={isRemote ? (item as KnowledgeRecord)._id : item.title}
+                  onClick={() => isRemote ? setSelectedItem(item as KnowledgeRecord) : undefined}
+                  className={`border-b border-[hsl(var(--border))] last:border-0 transition-colors ${
+                    isRemote ? "cursor-pointer hover:bg-[hsl(var(--secondary))]" : "hover:bg-[hsl(var(--secondary))]"
+                  } ${isSelected ? "bg-cyan-400/5 border-l-2 border-l-cyan-400" : ""}`}
+                >
+                  <td className="px-4 py-3 font-medium">{item.title}</td>
+                  <td className="px-4 py-3">{"type" in item ? item.type : (item as KnowledgeRecord).tags.join(", ") || "Document"}</td>
+                  <td className="px-4 py-3">{"owner" in item ? item.owner : (item as KnowledgeRecord).productId?.name || "Workspace"}</td>
+                  <td className="px-4 py-3 text-cyan-400">{"confidence" in item ? item.confidence : "Indexed"}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </Panel>
-      <div className="grid gap-4 lg:grid-cols-2">
-        <MediaPanel type="PDF Viewer" title="Compressor pressure loss diagnostics" icon={FileText} actionIcon={Eye} />
-        <MediaPanel type="Video Viewer" title="Pump priming and air lock checklist" icon={Play} actionIcon={Eye} />
-      </div>
+      {selectedItem ? (
+        <MediaPanel
+          type={selectedItem.tags.some((t) => t.toLowerCase().includes("video")) ? "Video Viewer" : "PDF Viewer"}
+          title={selectedItem.title}
+          icon={selectedItem.tags.some((t) => t.toLowerCase().includes("video")) ? Play : FileText}
+          actionIcon={Eye}
+          url={selectedItem.fileUrl ? `${API_BASE_URL}/kb/${selectedItem._id}/file` : undefined}
+          fileType={selectedItem.fileUrl && !selectedItem.tags.some((t) => t.toLowerCase().includes("video")) ? "pdf" : undefined}
+        />
+      ) : (
+        <Panel className="p-6 text-center text-sm text-[hsl(var(--muted-foreground))]">
+          <FileText className="mx-auto mb-2 h-8 w-8 opacity-40" />
+          Click a document row above to preview it here.
+        </Panel>
+      )}
     </div>
   );
 }

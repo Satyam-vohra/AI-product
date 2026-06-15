@@ -2,7 +2,9 @@ import { v2 as cloudinary } from 'cloudinary';
 import { env } from './environment';
 import { logger } from '../core/utils/logger';
 
-if (env.CLOUDINARY_CLOUD_NAME !== 'mock') {
+const isRealCloudinary = /^\d+$/.test(env.CLOUDINARY_API_KEY ?? '');
+
+if (isRealCloudinary) {
   cloudinary.config({
     cloud_name: env.CLOUDINARY_CLOUD_NAME,
     api_key: env.CLOUDINARY_API_KEY,

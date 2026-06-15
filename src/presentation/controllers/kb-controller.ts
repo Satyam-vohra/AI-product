@@ -243,6 +243,48 @@ export const updateKBEntry = async (
   }
 };
 
+export const serveKBFile = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const kbEntry = await KnowledgeBaseModel.findById(id);
+
+    if (!kbEntry || !kbEntry.fileUrl) {
+      throw new NotFoundError('File not found for this knowledge base entry');
+    }
+
+    const fileUrl = kbEntry.fileUrl;
+    const fileResponse = await fetch(fileUrl);
+
+    if (!fileResponse.ok) {
+      throw new NotFoundError('Could not retrieve file from storage');
+    }
+
+    // Always derive content-type from URL extension — Cloudinary raw/image uploads return
+    // application/octet-stream regardless of the actual file type, so never trust their header.
+    const urlPath = fileUrl.split('?')[0].toLowerCase();
+    let contentType: string;
+    if (urlPath.endsWith('.pdf')) contentType = 'application/pdf';
+    else if (urlPath.endsWith('.mp4')) contentType = 'video/mp4';
+    else if (urlPath.endsWith('.webm')) contentType = 'video/webm';
+    else if (urlPath.endsWith('.png')) contentType = 'image/png';
+    else if (urlPath.endsWith('.jpg') || urlPath.endsWith('.jpeg')) contentType = 'image/jpeg';
+    else contentType = fileResponse.headers.get('content-type') || 'application/octet-stream';
+
+    res.setHeader('Content-Type', contentType);
+    res.setHeader('Content-Disposition', 'inline');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+
+    const buffer = Buffer.from(await fileResponse.arrayBuffer());
+    res.send(buffer);
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const deleteKBEntry = async (
   req: Request,
   res: Response,

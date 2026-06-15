@@ -54,14 +54,25 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Array<{ label: string; href: string; type: string }>>([]);
-  const [user, setUser] = useState<AuthUser | null>(() => getAuthState()?.user || null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
   const allNav = [...navItems, ...adminItems];
 
   useEffect(() => {
-    api.profile().then((result) => setUser(result.data.user)).catch(() => undefined);
+    const cached = getAuthState();
+    if (!cached) {
+      window.location.href = "/login";
+      return;
+    }
+    setUser(cached.user);
+    api.profile()
+      .then((result) => setUser(result.data.user))
+      .catch(() => {
+        clearAuthState();
+        window.location.href = "/login";
+      });
   }, []);
 
   useEffect(() => {

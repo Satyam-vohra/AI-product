@@ -9,11 +9,13 @@ import notificationRoutes from './notification-routes';
 import landingRoutes from './landing-routes';
 import searchRoutes from './search-routes';
 import analyticsRoutes from './analytics-routes';
+import proxyRoutes from './proxy-routes';
 
 const router = Router();
 
 // API Modules
 router.use('/auth', authRoutes);
+router.use('/proxy', proxyRoutes);
 router.use('/products', productRoutes);
 router.use('/kb', kbRoutes);
 router.use('/sessions', sessionRoutes);

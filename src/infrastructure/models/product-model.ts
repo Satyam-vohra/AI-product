@@ -7,6 +7,7 @@ export interface IProduct extends Document {
   companyId: Schema.Types.ObjectId;
   description: string;
   manualUrl?: string;
+  videoUrl?: string;
   imageUrls: string[];
   specifications: Record<string, string>;
   createdAt: Date;
@@ -42,6 +43,9 @@ const productSchema = new Schema<IProduct>(
       required: [true, 'Description is required'],
     },
     manualUrl: {
+      type: String,
+    },
+    videoUrl: {
       type: String,
     },
     imageUrls: {
