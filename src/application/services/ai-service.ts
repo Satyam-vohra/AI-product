@@ -177,11 +177,14 @@ export class AIService {
         parts: [{ text: m.content }],
       }));
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.GEMINI_API_KEY!.trim()}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`;
 
     const response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': env.GEMINI_API_KEY!.trim(),
+      },
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: systemText }] },
         contents,
