@@ -39,14 +39,25 @@ export class AIService {
         return this.generateFallbackResponse(userMessage, citations, contextPart);
       }
 
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      if (env.GEMINI_API_KEY?.trim()) {
+        return await this.callGemini(history, userMessage, contextPart, passport, citations);
+      }
+
+      const useGroq = Boolean(env.GROQ_API_KEY?.trim());
+      const apiUrl = useGroq
+        ? 'https://api.groq.com/openai/v1/chat/completions'
+        : 'https://api.openai.com/v1/chat/completions';
+      const apiKey = useGroq ? env.GROQ_API_KEY!.trim() : env.OPENAI_API_KEY!.trim();
+      const model = useGroq ? 'llama-3.1-8b-instant' : env.OPENAI_MODEL;
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${env.OPENAI_API_KEY?.trim()}`,
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: env.OPENAI_MODEL,
+          model,
           max_tokens: 700,
           messages: this.buildMessages(history, userMessage, contextPart, passport, citations),
         }),
@@ -147,6 +158,50 @@ export class AIService {
 
     messages.push({ role: 'user', content: finalUserMessage });
     return messages;
+  }
+
+  private static async callGemini(
+    history: IChatMessage[],
+    userMessage: string,
+    contextPart: string | undefined,
+    passport: Awaited<ReturnType<typeof RAGService.generateProductPassport>>,
+    citations: Awaited<ReturnType<typeof RAGService.queryKnowledgeBase>>
+  ): Promise<string> {
+    const systemText = this.buildInstructions(contextPart, passport, citations);
+    const messages = this.buildMessages(history, userMessage, contextPart, passport, citations);
+
+    const contents = messages
+      .filter((m) => m.role !== 'system')
+      .map((m) => ({
+        role: m.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: m.content }],
+      }));
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.GEMINI_API_KEY!.trim()}`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: systemText }] },
+        contents,
+        generationConfig: { maxOutputTokens: 700 },
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      logger.warn(`Gemini response generation failed with ${response.status}: ${errorText}`);
+      return this.generateFallbackResponse(userMessage, citations, contextPart);
+    }
+
+    const payload = await response.json() as any;
+    const text = payload?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? '';
+    if (!text) {
+      logger.warn('Gemini returned empty response');
+      return this.generateFallbackResponse(userMessage, citations, contextPart);
+    }
+    return text;
   }
 
   private static generateFallbackResponse(
